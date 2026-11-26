@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="360" viewBox="0 0 320 360">
+  <rect width="320" height="360" fill="#201e1c"/>
+  <rect x="16" y="16" width="288" height="328" fill="#171614" stroke="#4e483f" stroke-width="2"/>
+  <circle cx="160" cy="132" r="44" fill="#3b3632" stroke="#8b8173" stroke-width="2"/>
+  <path d="M84 300 C84 220, 236 220, 236 300 Z" fill="#2b2724" stroke="#8b8173" stroke-width="2"/>
+  <rect x="70" y="295" width="180" height="32" fill="#e8d4b0" stroke="#151515" stroke-width="2"/>
+  <text x="160" y="315" text-anchor="middle" fill="#151515" font-family="monospace" font-size="13" font-weight="bold">PERSON OF INTEREST // E.B.</text>
+</svg>

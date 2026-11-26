@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="320" viewBox="0 0 480 320">
+  <rect width="480" height="320" fill="#1d1814"/>
+  <path d="M80 230 L130 140 L200 140 L240 90 L280 140 L350 140 L400 230 Z" fill="#2c241d" stroke="#85745d" stroke-width="2"/>
+  <rect x="225" y="160" width="30" height="70" fill="#15110e"/>
+  <circle cx="240" cy="118" r="7" fill="#e8d4b0" opacity="0.8"/>
+  <text x="240" y="275" text-anchor="middle" fill="#e8d4b0" font-family="Georgia, serif" font-size="18">CW-1947-01 // BLACKWOOD MANOR</text>
+</svg>

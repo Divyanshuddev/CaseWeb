@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="320" viewBox="0 0 480 320">
+  <rect width="480" height="320" fill="#14181c"/>
+  <rect x="195" y="75" width="42" height="150" fill="#242c33" stroke="#7d8992" stroke-width="2"/>
+  <circle cx="216" cy="92" r="10" fill="#e8d4b0" opacity="0.85"/>
+  <path d="M40 235 Q160 215 260 235 T440 230" fill="none" stroke="#626d75" stroke-width="3"/>
+  <text x="240" y="275" text-anchor="middle" fill="#e8d4b0" font-family="Georgia, serif" font-size="18">CW-1953-04 // MIDNIGHT HARBOR</text>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="320" viewBox="0 0 480 320">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#222222"/>
+      <stop offset="100%" stop-color="#0e0e0e"/>
+    </linearGradient>
+    <radialGradient id="lamp" cx="55%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#d8cfb8" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#0e0e0e" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="480" height="320" fill="url(#bg)"/>
+  <rect width="480" height="320" fill="url(#lamp)"/>
+  <!-- Study Desk & Overturned Inkwell -->
+  <rect x="65" y="180" width="350" height="100" fill="#1b1b1b" stroke="#5c564a" stroke-width="2"/>
+  <rect x="130" y="155" width="120" height="40" rx="2" fill="#2c2a26" stroke="#8a8172"/>
+  <path d="M280 182 L305 170 L315 186 Z" fill="#0d0d0d" stroke="#7a7265"/>
+  <ellipse cx="330" cy="192" rx="34" ry="11" fill="#080808" opacity="0.85"/>
+  <!-- Window frame silhouette -->
+  <rect x="300" y="30" width="120" height="125" fill="#131313" stroke="#474239" stroke-width="3"/>
+  <line x1="360" y1="30" x2="360" y2="155" stroke="#474239" stroke-width="2"/>
+  <line x1="300" y1="92" x2="420" y2="92" stroke="#474239" stroke-width="2"/>
+  <text x="24" y="300" fill="#b8ae9c" font-family="monospace" font-size="12" letter-spacing="2">PLATE B-14 // EAST STUDY 01:15 AM</text>
+</svg>

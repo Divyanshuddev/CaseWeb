@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="360" viewBox="0 0 320 360">
+  <rect width="320" height="360" fill="#23211e"/>
+  <rect x="16" y="16" width="288" height="328" fill="#181715" stroke="#4e483f" stroke-width="2"/>
+  <!-- Height markers -->
+  <g stroke="#3d3830" stroke-width="1">
+    <line x1="25" y1="70" x2="295" y2="70"/>
+    <line x1="25" y1="120" x2="295" y2="120"/>
+    <line x1="25" y1="170" x2="295" y2="170"/>
+    <line x1="25" y1="220" x2="295" y2="220"/>
+  </g>
+  <!-- Silhouette -->
+  <circle cx="160" cy="135" r="46" fill="#3a3630" stroke="#7d7466" stroke-width="2"/>
+  <path d="M72 300 C72 220, 248 220, 248 300 Z" fill="#2f2c27" stroke="#7d7466" stroke-width="2"/>
+  <rect x="70" y="295" width="180" height="32" fill="#e8d4b0" stroke="#151515" stroke-width="2"/>
+  <text x="160" y="315" text-anchor="middle" fill="#151515" font-family="monospace" font-size="13" font-weight="bold">SUBJECT #02 // PENDELTON</text>
+</svg>

@@ -1,0 +1,55 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: caseweb-postgres
+    environment:
+      POSTGRES_USER: caseweb
+      POSTGRES_PASSWORD: caseweb_secret
+      POSTGRES_DB: caseweb_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - caseweb_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U caseweb -d caseweb_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: caseweb-backend
+    environment:
+      DATABASE_URL: postgresql+psycopg2://caseweb:caseweb_secret@postgres:5432/caseweb_db
+      SECRET_KEY: change-this-production-secret-key
+      CORS_ORIGINS: http://localhost:3000,http://127.0.0.1:3000
+      STORAGE_BACKEND: local
+      UPLOAD_DIR: /app/uploads
+    ports:
+      - "8000:8000"
+    volumes:
+      - caseweb_uploads:/app/uploads
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: sh -c "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8000"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: http://localhost:8000
+    container_name: caseweb-frontend
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  caseweb_pgdata:
+  caseweb_uploads:

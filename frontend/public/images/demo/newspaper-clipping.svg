@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="300" viewBox="0 0 440 300">
+  <rect width="440" height="300" fill="#e8d4b0"/>
+  <rect x="18" y="18" width="404" height="264" fill="#efe1c6" stroke="#8d795a" stroke-width="1.5"/>
+  <text x="220" y="54" text-anchor="middle" fill="#1e1b18" font-family="Georgia, serif" font-size="22" font-weight="bold">THE EVENING CHRONICLE</text>
+  <line x1="36" y1="68" x2="404" y2="68" stroke="#1e1b18" stroke-width="2"/>
+  <line x1="36" y1="73" x2="404" y2="73" stroke="#1e1b18" stroke-width="1"/>
+  <text x="40" y="102" fill="#24201c" font-family="monospace" font-size="13" font-weight="bold">ARCHIVIST MISSING AFTER AUTUMN GALA</text>
+  <rect x="40" y="118" width="360" height="16" fill="#d9c6a3"/>
+  <rect x="40" y="142" width="330" height="12" fill="#d9c6a3"/>
+  <rect x="40" y="162" width="345" height="12" fill="#d9c6a3"/>
+  <rect x="40" y="190" width="356" height="58" fill="#e3cfb0" stroke="#b3262e" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="52" y="216" fill="#8b1d23" font-family="monospace" font-size="13" font-weight="bold">"...midnight ledger transfer at the Boathouse."</text>
+  <text x="52" y="236" fill="#3a332a" font-family="monospace" font-size="11">MARGIN ANNOTATION: CHECK PIER 9 / BOATHOUSE LOCK</text>
+</svg>
