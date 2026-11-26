@@ -288,7 +288,12 @@ def test_settings_normalizes_render_database_url_and_cors():
 
     s = Settings(
         DATABASE_URL="postgres://user:pass@dpg-123.oregon-postgres.render.com/caseweb_db",
+        DATABASE_URL_UNPOOLED="postgresql://user:pass@ep-abc.us-east-2.aws.neon.tech/neondb?sslmode=require",
         CORS_ORIGINS="https://caseweb.vercel.app/, http://localhost:3000 ",
     )
     assert s.DATABASE_URL == "postgresql+psycopg2://user:pass@dpg-123.oregon-postgres.render.com/caseweb_db"
+    assert (
+        s.migration_database_url
+        == "postgresql+psycopg2://user:pass@ep-abc.us-east-2.aws.neon.tech/neondb?sslmode=require"
+    )
     assert s.cors_origins_list == ["https://caseweb.vercel.app", "http://localhost:3000"]

@@ -2,6 +2,7 @@
 .env
 .env.*
 !.env.example
+.neon
 
 # Python / Backend
 .venv/
@@ -38,3 +39,4 @@ pnpm-debug.log*
 Thumbs.db
 .idea/
 .vscode/
+.neon

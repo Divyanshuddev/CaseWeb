@@ -5,6 +5,9 @@ from typing import List
 from pydantic import field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+BACKEND_DIR = Path(__file__).resolve().parent.parent
+ROOT_DIR = BACKEND_DIR.parent
+
 
 class Settings(BaseSettings):
     APP_NAME: str = "CaseWeb"
@@ -12,6 +15,7 @@ class Settings(BaseSettings):
     DEBUG: bool = True
 
     DATABASE_URL: str = "postgresql+psycopg2://caseweb:caseweb_secret@localhost:5432/caseweb_db"
+    DATABASE_URL_UNPOOLED: str = ""
 
     SECRET_KEY: str = "dev-only-insecure-key-replace-in-production-caseweb-2026"
     ALGORITHM: str = "HS256"
@@ -31,22 +35,34 @@ class Settings(BaseSettings):
     S3_SECRET_ACCESS_KEY: str = ""
 
     model_config = SettingsConfigDict(
-        env_file=".env",
+        env_file=(
+            str(ROOT_DIR / ".env"),
+            str(ROOT_DIR / ".env.local"),
+            str(BACKEND_DIR / ".env"),
+            str(BACKEND_DIR / ".env.local"),
+        ),
         env_file_encoding="utf-8",
         extra="ignore",
     )
 
-    @field_validator("DATABASE_URL", mode="before")
+    @field_validator("DATABASE_URL", "DATABASE_URL_UNPOOLED", mode="before")
     @classmethod
     def normalize_database_url(cls, value: str) -> str:
         if not isinstance(value, str):
             return value
         url = value.strip()
+        if not url:
+            return ""
         if url.startswith("postgres://"):
             return url.replace("postgres://", "postgresql+psycopg2://", 1)
         if url.startswith("postgresql://"):
             return url.replace("postgresql://", "postgresql+psycopg2://", 1)
         return url
+
+    @property
+    def migration_database_url(self) -> str:
+        """Prefer Neon's direct/unpooled URL for Alembic schema migrations."""
+        return self.DATABASE_URL_UNPOOLED or self.DATABASE_URL
 
     @property
     def cors_origins_list(self) -> List[str]:
